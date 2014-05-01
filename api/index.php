@@ -1,11 +1,10 @@
 <?php
 
 require '../vendor/autoload.php';
+require '../inc/DbInterface.php';
+require '../inc/DropboxDb.php';
 
-$app = new \Slim\Slim();
-
-$app->get('/hello/:name', function ($name) {
-    echo "Hello, $name";
-});
-
-$app->run();
+$db = new DropboxDb();
+echo '<pre>';
+var_dump($db->getBeers());
+echo '</pre>';
