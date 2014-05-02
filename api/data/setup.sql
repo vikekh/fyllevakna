@@ -40,3 +40,14 @@ create table fyllevakna_beverages (
     foreign key (brandId) references fyllevakna_brands(id),
     foreign key (categoryName) references fyllevakna_categories(name)
 );
+
+insert into fyllevakna_users (username, name) values('admin', 'Admin');
+
+insert into fyllevakna_categories (name) values('beer');
+
+insert into fyllevakna_countries (code, name) values('gb', 'Great Britain');
+
+insert into fyllevakna_brands (name, countryCode) values('Brewmeister', 'gb');
+
+insert into fyllevakna_beverages (brandId, name, abv, systembolagetId,
+    categoryName) values(last_insert_id(), 'Snake Venom', 67.5, null, 'beer');
